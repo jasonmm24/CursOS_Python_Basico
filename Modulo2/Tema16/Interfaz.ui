@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tema 16: Tablas, Menús y Pestañas</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_inventario">
+       <attribute name="title">
+        <string>Inventario</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_tab1">
+        <item>
+         <widget class="QLabel" name="label_info">
+          <property name="font">
+           <font>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Listado de productos disponibles (QTableWidget)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabla_productos">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Producto</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Categoría</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Precio ($)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="btn_agregar">
+            <property name="text">
+             <string>+ Añadir Fila</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_eliminar">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>- Eliminar Fila</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_detalle">
+       <attribute name="title">
+        <string>Detalles / Notas</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_nota">
+          <property name="text">
+           <string>Notas adicionales:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QTextEdit" name="txt_notas"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="btn_guardar_notas">
+          <property name="text">
+           <string>Guardar Notas</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_archivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="action_nuevo"/>
+    <addaction name="separator"/>
+    <addaction name="action_salir"/>
+   </widget>
+   <widget class="QMenu" name="menu_ayuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="action_acerca_de"/>
+   </widget>
+   <addaction name="menu_archivo"/>
+   <addaction name="menu_ayuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_salir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_nuevo">
+   <property name="text">
+    <string>Nuevo Inventario</string>
+   </property>
+  </action>
+  <action name="action_acerca_de">
+   <property name="text">
+    <string>Acerca de...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
